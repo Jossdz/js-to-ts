@@ -1,0 +1,1 @@
+const we = wer => s

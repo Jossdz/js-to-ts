@@ -1,0 +1,193 @@
+import { themes } from "mdx-deck"
+import Utopicode from "./components/Utopicode"
+import { Split } from "mdx-deck"
+import { CodeSurfer } from "code-surfer"
+
+export const theme = themes.code
+
+<img src='logo.svg' style={{ width: "40%" }} alt='talk-logo' />
+
+---
+
+<Utopicode />
+
+---
+
+## What is TypeScript?
+
+---
+
+<Split>
+  
+  <img src='superset.svg' style={{ width: "100%" }} alt="superset"/>
+
+## JS superset
+
+</Split>
+
+---
+
+## TS compiles into JS
+
+<img src='compile.svg' alt='compile' style={{ width: "80vw" }} alt='compile' />
+
+---
+
+# How TS make your applications scalable and secure?
+
+---
+
+## 1. Helps you avoid js common errors
+
+<img
+  src='https://miro.medium.com/max/534/1*djXKnw6J-U9SLdLK2FwCNA.jpeg'
+  alt='type error'
+  style={{ width: "60%" }}
+/>
+
+---
+
+## 2. Double your productivity
+
+- Type safety
+- Context in your code
+
+---
+
+## 3. Improves teams efficiency
+
+The language provides more readability and predictability of code because you can look at something and immediately infer how it works. This is a direct result of the type system.
+
+---
+
+## 4. Instant feedback flow
+
+<img
+  src='https://i.postimg.cc/zXbQV09M/image.png'
+  alt='autocomplete'
+  style={{ width: "80vw" }}
+/>
+
+---
+
+## 5. Autocompletion on your own code
+
+<img
+  src='https://i.postimg.cc/vmg7vNvF/image.png'
+  alt='autocomplete'
+  style={{ width: "80vw" }}
+/>
+
+---
+
+# TS Basics
+
+---
+
+## Add Typescript as a dev dependency
+
+`$ npm i -D typescript` or `$ yarn add -D typescript`
+
+---
+
+## tsconfig.json
+
+Every TS project should include a `tsconfig.json` file on the it's root directory
+
+---
+
+<CodeSurfer>
+
+```json title="tsconfig" subtitle="Defines how the compiles will work. things like:"
+{
+  "compilerOptions": {
+    "lib": ["es2015"],
+    "module": "commonjs",
+    "ourDir": "dist",
+    "strict": true,
+    "target": "es2015"
+  }
+}
+```
+
+```json 3 subtitle="The es version you want yo use in your project"
+{
+  "compilerOptions": {
+    "lib": ["es2015"],
+    "module": "commonjs",
+    "ourDir": "dist",
+    "strict": true,
+    "target": "es2015"
+  }
+}
+```
+
+```json 4 subtitle="Module system tsc should compile your code to"
+{
+  "compilerOptions": {
+    "lib": ["es2015"],
+    "module": "commonjs",
+    "ourDir": "dist",
+    "strict": true,
+    "target": "es2015"
+  }
+}
+```
+
+```json 6 subtitle="Be as strict as posible"
+{
+  "compilerOptions": {
+    "lib": ["es2015"],
+    "module": "commonjs",
+    "ourDir": "dist",
+    "strict": true,
+    "target": "es2015"
+  }
+}
+```
+
+```json 7 subtitle="Output ES version"
+{
+  "compilerOptions": {
+    "lib": ["es2015"],
+    "module": "commonjs",
+    "ourDir": "dist",
+    "strict": true,
+    "target": "es2015"
+  }
+}
+```
+
+</CodeSurfer>
+
+---
+
+## recommended tsconfig:
+
+[https://github.com/tsconfig/bases/](https://github.com/tsconfig/bases/)
+
+---
+
+## Create a new TS file and start playing
+
+`$ touch index.ts`
+
+---
+
+## [Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+
+- Boolean
+- Number
+- String
+- Array
+- **Tuple**
+- **Enum**
+- **Unknown**
+- **Any**
+- **Void**
+- Null
+- Undefined
+- **Never**
+- Object
+
+---
