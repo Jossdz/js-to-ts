@@ -1,7 +1,8 @@
 import { themes } from "mdx-deck"
 import Utopicode from "./components/Utopicode"
 import { Split } from "mdx-deck"
-import { CodeSurfer } from "code-surfer"
+import { CodeSurfer, CodeSurferColumns } from "code-surfer"
+import { nightOwl } from "@code-surfer/themes"
 
 export const theme = themes.code
 
@@ -96,7 +97,7 @@ Every TS project should include a `tsconfig.json` file on the it's root director
 
 ---
 
-<CodeSurfer>
+<CodeSurfer theme={nightOwl}>
 
 ```json title="tsconfig" subtitle="Defines how the compiles will work. things like:"
 {
@@ -191,3 +192,348 @@ Every TS project should include a `tsconfig.json` file on the it's root director
 - Object
 
 ---
+
+<CodeSurfer theme={nightOwl}>
+
+```ts title="Tuples" subtitle="Tuples are subtype of array"
+var empId: number = 1
+var empName: string = "Steve"
+
+// Tuple type variable
+var employee: [number, string] = [1, "Steve"]
+```
+
+```ts 5[15:30] subtitle="They have fixed lenght"
+var empId: number = 1
+var empName: string = "Steve"
+
+// Tuple type variable
+var employee: [number, string] = [1, "Steve"]
+```
+
+```ts 5[16:22,35] subtitle="And types for each index"
+var empId: number = 1
+var empName: string = "Steve"
+
+// Tuple type variable
+var employee: [number, string] = [1, "Steve"]
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer theme={nightOwl}>
+
+```ts title="Enums" subtitle="Enums allow a developer to define a set of named constants"
+enum Direction {
+  Up = "UP",
+  Down = "DOWN",
+  Left = "LEFT",
+  Right = "RIGHT"
+}
+```
+
+```ts 8 subtitle="You can acces to an enum value with dot notation like in an object."
+enum Direction {
+  Up = "UP",
+  Down = "DOWN",
+  Left = "LEFT",
+  Right = "RIGHT"
+}
+
+Direction.UP // 0
+```
+
+</CodeSurfer>
+
+---
+
+## Any and Unknown
+
+**Any** is the way to make TS ignore the type of a variable, this stops the typeckecking for the variable and looses the power of TS.
+
+**Unknown** type is similar to any but less permissive.
+
+---
+
+<CodeSurfer theme={nightOwl}>
+
+```ts
+let a: any
+
+a = "a"
+a = 2
+
+let b: unknown
+
+b = 2
+let c: unknown = b // ✔
+let d: number = b // ✖
+```
+
+```ts 1 subtitle="We can explicitly define the type of a variable after it's name with ":" and the type"
+let a: any
+
+a = "a"
+a = 2
+
+let b: unknown
+
+b = 2
+let c: unknown = b // ✔
+let d: number = b // ✖
+```
+
+```ts 1 subtitle="Here we are telling our variable a to be any"
+let a: any
+
+a = "a"
+a = 2
+
+let b: unknown
+
+b = 2
+let c: unknown = b // ✔
+let d: number = b // ✖
+```
+
+```ts 1:4 subtitle="This makes TS behave as JS does (which is not good, actually it's what we're trying to avoid)"
+let a: any
+
+a = "a"
+a = 2
+
+let b: unknown
+
+b = 2
+let c: unknown = b // ✔
+let d: number = b // ✖
+```
+
+```ts 6:10 subtitle="While any deactivates the typechecker completetly, unknown performs some typechecking."
+let a: any
+
+a = "a"
+a = 2
+
+let b: unknown
+
+b = 2
+let c: unknown = b // ✔
+let d: number = b // ✖
+```
+
+</CodeSurfer>
+
+---
+
+## Void and Never
+
+As null and undefined, these couple of types helps us to type an element with the absence of a value, particularly on functions.
+
+---
+
+<CodeSurfer theme={nightOwl}>
+
+```ts
+function a() {
+  return null
+}
+
+function b() {
+  return undefined
+}
+
+function c() {
+  let a = 2 + 2
+  let b = 3 + 3
+}
+
+function d() {
+  while (true) {
+    doSomethig()
+  }
+}
+```
+
+```ts 1:3 subtitle="A function that returns null"
+function a() {
+  return null
+}
+
+function b() {
+  return undefined
+}
+
+function c() {
+  let a = 2 + 2
+  let b = 3 + 3
+}
+
+function d() {
+  while (true) {
+    doSomethig()
+  }
+}
+```
+
+```ts 5:7 subtitle="A function that returns undefined"
+function a() {
+  return null
+}
+
+function b() {
+  return undefined
+}
+
+function c() {
+  let a = 2 + 2
+  let b = 3 + 3
+}
+
+function d() {
+  while (true) {
+    doSomethig()
+  }
+}
+```
+
+```ts 8:12 subtitle="A function that returns void"
+function a() {
+  return null
+}
+
+function b() {
+  return undefined
+}
+
+function c() {
+  let a = 2 + 2
+  let b = 3 + 3
+}
+
+function d() {
+  while (true) {
+    doSomethig()
+  }
+}
+```
+
+```ts 14:18 subtitle="A function that returns never"
+function a() {
+  return null
+}
+
+function b() {
+  return undefined
+}
+
+function c() {
+  let a = 2 + 2
+  let b = 3 + 3
+}
+
+function d() {
+  while (true) {
+    doSomethig()
+  }
+}
+```
+
+</CodeSurfer>
+
+---
+
+## Working with Types
+
+Once you know the basic of TS types you should start working with them and the different ways of apply them.
+
+---
+
+<CodeSurferColumns sizes={[1,1]} themes={[nightOwl, nightOwl]}>
+
+<Step theme={nightOwl}>
+
+```ts
+const a: number = 3
+```
+
+<img src='number.svg' />
+
+</Step>
+
+<Step >
+
+```ts
+const b: null = null
+```
+
+<img src='null.svg' />
+
+</Step>
+
+<Step title="Union">
+
+```ts
+type a = { a: string }
+type b = { b: string }
+
+let c: a | b = { a: "a", b: "b" }
+let response: string | null
+```
+
+<img src='union.svg' />
+
+</Step>
+
+<Step>
+
+```ts 5
+type a = { a: string }
+type b = { b: string }
+
+let c: a | b = { a: "a", b: "b" }
+let response: string | null
+```
+
+<img src='union.svg' />
+
+</Step>
+
+<Step title="Intersection">
+
+```ts
+type a = { a: string }
+type b = { b: string }
+
+let c: a & b = { a: "a", b: "b" }
+```
+
+<img src='intersection.svg' />
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+# Tips
+
+---
+
+## 1. Don't explicitly set the type of everything, let typescript infer the most.
+
+---
+
+## 2. Use the @types/[tool] declaration types - [docs](https://www.typescriptlang.org/dt/search?search=)
+
+---
+
+## 3. Let vscode help you
+
+---
+
+# Thanks!
+
+## @jossdz
