@@ -75,13 +75,13 @@ export default () => (
 
       <article>
         <p>
-          Full-stack developer and computer systems engineer with 3 years of
-          experience in technology education, currently lead teacher of the
-          Ironhack Mexico web development course where he has helped more than
-          200 students to become programmers using the MERN stack. When he is
-          not teaching he is learning the newest and best in the technology
-          industry and then sharing it in class, community talks and the tech
-          stand up podcast.
+          Desarrollador Full-stack e Ingeniero en sistemas computacionales con 3
+          años de experiencia en educación en tecnología, actualmente lead
+          teacher del curso de desarrollo web de Ironhack Mexico dondee ha
+          ayudado a más de 200 estudiantes a convertise en programadores usando
+          el MERN stack. Cuando no está enseñado está aprendiendo lo más nuevo y
+          mejor en la industria de tecnología para luego compartirlo en clase,
+          charlas de comunidad y el podcast tech stad up.
         </p>
       </article>
 
